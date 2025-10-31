@@ -1,0 +1,22 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        x:Class="SukiUIDemo.MainWindow"
+        Title="SukiUI 演示程序"
+        Width="1200" Height="800">
+    <DockPanel>
+        <!-- 导航菜单 -->
+        <StackPanel DockPanel.Dock="Left" Width="200" Background="#f5f5f5">
+            <TextBlock Text="SukiUI 演示" FontSize="18" FontWeight="Bold" Margin="20,20,20,10" />
+            <Button Content="首页" Margin="10,5" Click="NavigateToHome" />
+            <Button Content="按钮组件" Margin="10,5" Click="NavigateToButtons" />
+            <Button Content="输入组件" Margin="10,5" Click="NavigateToInputs" />
+            <Button Content="数据展示" Margin="10,5" Click="NavigateToData" />
+            <Button Content="数据表格" Margin="10,5" Click="NavigateToDataTable" />
+            <Button Content="导航组件" Margin="10,5" Click="NavigateToNavigation" />
+        </StackPanel>
+        
+        <!-- 内容区域 -->
+        <ContentControl x:Name="ContentRegion" />
+    </DockPanel>
+</Window>

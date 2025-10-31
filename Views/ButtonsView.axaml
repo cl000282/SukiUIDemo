@@ -1,0 +1,53 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:suki="https://github.com/kikipoulet/SukiUI"
+             x:Class="SukiUIDemo.Views.ButtonsView">
+    <ScrollViewer>
+        <StackPanel Margin="20" Spacing="20">
+            <TextBlock Text="按钮组件演示" FontSize="24" FontWeight="Bold" />
+            
+            <suki:GlassCard Width="600">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="基本按钮" FontSize="16" FontWeight="SemiBold" />
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <Button Content="主要按钮"  Classes="Flat Accent" Click="OnButtonClick" />
+                        <Button Content="次要按钮"  Classes="Success" Click="OnButtonClick" />
+                        <Button Content="危险按钮"  Classes="Success Rounded"  Click="OnButtonClick" />
+                    </StackPanel>
+                </StackPanel>
+            </suki:GlassCard>
+            
+            <suki:GlassCard Width="600">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="不同尺寸" FontSize="16" FontWeight="SemiBold" />
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <Button Content="小按钮"   Click="OnButtonClick" />
+                        <Button Content="默认按钮" Click="OnButtonClick" />
+                        <Button Content="大按钮"   Click="OnButtonClick" />
+                    </StackPanel>
+                </StackPanel>
+            </suki:GlassCard>
+            
+            <suki:GlassCard Width="600">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="禁用状态" FontSize="16" FontWeight="SemiBold" />
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <Button Content="禁用按钮" IsEnabled="False" Click="OnButtonClick" />
+                        <Button Content="禁用次要"  IsEnabled="False" Click="OnButtonClick" />
+                    </StackPanel>
+                </StackPanel>
+            </suki:GlassCard>
+            
+            <suki:GlassCard Width="600">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="带图标按钮" FontSize="16" FontWeight="SemiBold" />
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <Button Content="保存"  Click="OnButtonClick" />
+                        <Button Content="删除"   Click="OnButtonClick" />
+                        <Button Content="搜索"  Click="OnButtonClick" />
+                    </StackPanel>
+                </StackPanel>
+            </suki:GlassCard>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

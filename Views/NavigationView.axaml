@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:suki="https://github.com/kikipoulet/SukiUI"
+             x:Class="SukiUIDemo.Views.NavigationView">
+    <ScrollViewer>
+        <StackPanel Margin="20" Spacing="20">
+            <TextBlock Text="导航组件演示" FontSize="24" FontWeight="Bold" />
+            
+            <suki:GlassCard Width="600">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="分页器" FontSize="16" FontWeight="SemiBold" />
+                   <!-- <suki:CodeView Total="50" PageSize="10" />-->
+                </StackPanel>
+            </suki:GlassCard>
+            
+            <suki:GlassCard Width="600">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="步骤条" FontSize="16" FontWeight="SemiBold" />
+                 <!--   <suki:Stepper Current="1">
+                        <suki:Step Title="第一步" Description="填写基本信息" />
+                        <suki:Step Title="第二步" Description="确认信息" />
+                        <suki:Step Title="第三步" Description="完成" />
+                    </suki:Steps>-->
+                </StackPanel>
+            </suki:GlassCard>
+            
+            <suki:GlassCard Width="600">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="面包屑" FontSize="16" FontWeight="SemiBold" />
+                <!--    <suki:Breadcrumb>
+                        <suki:BreadcrumbItem Content="首页" />
+                        <suki:BreadcrumbItem Content="组件演示" />
+                        <suki:BreadcrumbItem Content="导航组件" />
+                    </suki:Breadcrumb>-->
+                </StackPanel>
+            </suki:GlassCard>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

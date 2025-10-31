@@ -1,0 +1,42 @@
+using Avalonia;
+using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Markup.Xaml;
+using Prism.DryIoc;
+using Prism.Ioc;
+using SukiUIDemo.Views;
+
+namespace SukiUIDemo
+{
+    public partial class App : PrismApplication
+    {
+        public override void Initialize()
+        {
+            AvaloniaXamlLoader.Load(this);
+            base.Initialize();
+        }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            // 注册视图
+            containerRegistry.RegisterForNavigation<HomeView>();
+            containerRegistry.RegisterForNavigation<ButtonsView>();
+            containerRegistry.RegisterForNavigation<InputsView>();
+            containerRegistry.RegisterForNavigation<DataView>();
+            containerRegistry.RegisterForNavigation<NavigationView>();
+        }
+
+        protected override void OnInitialized()
+        {
+            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+            {
+                desktop.MainWindow = Container.Resolve<MainWindow>();
+            }
+            base.OnInitialized();
+        }
+
+        protected override Avalonia.Controls.Window CreateShell()
+        {
+            return Container.Resolve<MainWindow>();
+        }
+    }
+}

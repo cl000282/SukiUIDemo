@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:suki="https://github.com/kikipoulet/SukiUI"
+             x:Class="SukiUIDemo.Views.InputsView">
+    <ScrollViewer>
+        <StackPanel Margin="20" Spacing="20">
+            <TextBlock Text="输入组件演示" FontSize="24" FontWeight="Bold" />
+            
+            <suki:GlassCard Width="600">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="文本框" FontSize="16" FontWeight="SemiBold" />
+                    <TextBox Watermark="请输入文本..." />
+                    <TextBox Watermark="禁用文本框" IsEnabled="False" />
+                </StackPanel>
+            </suki:GlassCard>
+            
+            <suki:GlassCard Width="600">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="数字输入框" FontSize="16" FontWeight="SemiBold" />
+                    <NumericUpDown Minimum="0" Maximum="100" Value="50" />
+                </StackPanel>
+            </suki:GlassCard>
+            
+            <suki:GlassCard Width="600">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="选择器" FontSize="16" FontWeight="SemiBold" />
+                    <ComboBox>
+                        <ComboBoxItem Content="选项一" />
+                        <ComboBoxItem Content="选项二" />
+                        <ComboBoxItem Content="选项三" />
+                    </ComboBox>
+                </StackPanel>
+            </suki:GlassCard>
+            
+            <suki:GlassCard Width="600">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="开关和复选框" FontSize="16" FontWeight="SemiBold" />
+                    <ToggleSwitch Content="开关控件" />
+                    <CheckBox Content="复选框一" />
+                    <CheckBox Content="复选框二" IsChecked="True" />
+                </StackPanel>
+            </suki:GlassCard>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

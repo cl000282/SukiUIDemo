@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:suki="https://github.com/kikipoulet/SukiUI"
+             x:Class="SukiUIDemo.Views.HomeView">
+    <ScrollViewer>
+        <StackPanel Margin="20" Spacing="20">
+            <TextBlock Text="SukiUI 演示程序" FontSize="24" FontWeight="Bold" />
+            
+            <suki:GlassCard Width="600">
+                <StackPanel Spacing="10">
+                    <TextBlock Text="欢迎使用 SukiUI 演示程序" FontSize="18" FontWeight="SemiBold" />
+                    <TextBlock Text="本程序展示了 SukiUI 6.0.3 的各种组件和功能" />
+                    <TextBlock Text="使用 Avalonia 11.3.8 和 Prism 9.0.537 构建" />
+                </StackPanel>
+            </suki:GlassCard>
+            
+            <suki:GlassCard Width="600">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="演示内容" FontSize="16" FontWeight="SemiBold" />
+                    <TextBlock Text="• 按钮组件 - 各种按钮样式和交互" />
+                    <TextBlock Text="• 输入组件 - 文本框、选择器等输入控件" />
+                    <TextBlock Text="• 数据展示 - 表格、列表等数据展示组件" />
+                    <TextBlock Text="• 导航组件 - 菜单、标签页等导航控件" />
+                </StackPanel>
+            </suki:GlassCard>
+            
+            <suki:GlassCard Width="600">
+                <StackPanel Spacing="10">
+                    <TextBlock Text="技术栈" FontSize="16" FontWeight="SemiBold" />
+                    <TextBlock Text="• .NET 8.0" />
+                    <TextBlock Text="• Avalonia UI 11.3.8" />
+                    <TextBlock Text="• Prism 9.0.537" />
+                    <TextBlock Text="• SukiUI 6.0.3" />
+                </StackPanel>
+            </suki:GlassCard>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
