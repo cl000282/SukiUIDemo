@@ -14,7 +14,7 @@ namespace SukiUIDemo
             
             // 手动设置 ViewModel，通过 Prism 容器解析确保依赖注入正常工作
             var app =   Application.Current as App;
-            this.DataContext = app.Container.Resolve<MainWindowViewModel>();
+            this.DataContext = app?.Container.Resolve<MainWindowViewModel>();
         }
 
         private void InitializeComponent()

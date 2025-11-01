@@ -16,11 +16,11 @@ namespace SukiUIDemo.ViewModels
     {
         private ObservableCollection<Product>? _products;
         private string? _statusText;
-        private Random _random = new Random();
+        private readonly Random _random = new();
 
         public ObservableCollection<Product> Products
         {
-            get => _products ?? new ObservableCollection<Product>();
+            get => _products ?? [];
             set => SetProperty(ref _products, value);
         }
 
@@ -37,7 +37,7 @@ namespace SukiUIDemo.ViewModels
 
         public DataTableViewModel()
         {
-            Products = new ObservableCollection<Product>();
+            Products = [];
             StatusText = "点击按钮操作数据表格";
 
             AddSampleDataCommand = new DelegateCommand<string>(async (count) => await AddSampleDataAsync(count));
