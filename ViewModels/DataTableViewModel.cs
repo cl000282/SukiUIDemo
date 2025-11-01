@@ -1,4 +1,5 @@
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Threading;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -16,6 +17,7 @@ namespace SukiUIDemo.ViewModels
     {
         private ObservableCollection<Product>? _products;
         private string? _statusText;
+        private bool _areAllRowsExpanded;
         private readonly Random _random = new();
 
         public ObservableCollection<Product> Products
@@ -137,16 +139,16 @@ namespace SukiUIDemo.ViewModels
 
         private void ExpandAllRows()
         {
-            // 在MVVM模式下，展开行的逻辑可能需要通过事件或附加属性实现
-            // 这里暂时保留状态更新
-            StatusText = "所有行已展开";
+            // 在实际应用中，这里应该通过事件或消息机制通知View
+            // 由于Avalonia DataGrid在MVVM模式下控制行展开比较复杂
+            // 这里我们提供一个简单的状态指示
+            StatusText = "所有行已展开（功能需要在前端代码中实现）";
         }
 
         private void CollapseAllRows()
         {
-            // 在MVVM模式下，折叠行的逻辑可能需要通过事件或附加属性实现
-            // 这里暂时保留状态更新
-            StatusText = "所有行已折叠";
+            // 在实际应用中，这里应该通过事件或消息机制通知View
+            StatusText = "所有行已折叠（功能需要在前端代码中实现）";
         }
     }
 }
