@@ -2,6 +2,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:suki="https://github.com/kikipoulet/SukiUI"
              xmlns:local="clr-namespace:SukiUIDemo.Models"
+             xmlns:vm="clr-namespace:SukiUIDemo.ViewModels"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             x:DataType="vm:DataTableViewModel"
              x:Class="SukiUIDemo.Views.DataTableView">
     <Grid Margin="20">
         <Grid.RowDefinitions>
@@ -10,7 +14,7 @@
         </Grid.RowDefinitions>
         
         <!-- 标题和操作按钮 -->
-        <StackPanel Grid.Row="0" Spacing="15">
+        <StackPanel Grid.Row="0" Spacing="15" x:DataType="vm:DataTableViewModel">
             <TextBlock Text="数据表格展示" FontSize="24" FontWeight="Bold" />
             
             <suki:GlassCard>
@@ -18,14 +22,14 @@
                     <TextBlock Text="表格操作" FontSize="16" FontWeight="SemiBold" />
                     
                     <StackPanel Orientation="Horizontal" Spacing="10">
-                        <Button Content="添加10条数据" Click="AddSampleData" />
-                        <Button Content="添加10万条数据" Click="AddSampleData" />
-                        <Button Content="清空数据" Click="ClearData" />
-                        <Button Content="展开所有行" Click="ExpandAllRows" />
-                        <Button Content="折叠所有行" Click="CollapseAllRows" />
+                        <Button Content="添加10条数据" Command="{Binding AddSampleDataCommand}" CommandParameter="10" />
+                        <Button Content="添加10万条数据" Command="{Binding AddSampleDataCommand}" CommandParameter="100000" />
+                        <Button Content="清空数据" Command="{Binding ClearDataCommand}" />
+                        <Button Content="展开所有行" Command="{Binding ExpandAllRowsCommand}" />
+                        <Button Content="折叠所有行" Command="{Binding CollapseAllRowsCommand}" />
                     </StackPanel>
                     
-                    <TextBlock x:Name="StatusText" Text="点击按钮操作数据表格" />
+                    <TextBlock Text="{Binding StatusText}" />
                 </StackPanel>
             </suki:GlassCard>
         </StackPanel>
@@ -41,12 +45,11 @@
                 <TextBlock Grid.Row="0" Text="产品数据表格（支持子表展开）" FontSize="16" FontWeight="SemiBold" Margin="10" />
                 
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                    <DataGrid x:Name="ProductsDataGrid" 
+                    <DataGrid ItemsSource="{Binding Products}"
                               AutoGenerateColumns="False"
                               CanUserReorderColumns="True"
                               CanUserSortColumns="True"
-                              IsReadOnly="True"
-                              x:DataType="local:Product">                        
+                              IsReadOnly="True">                        
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="80" />
                             <DataGridTextColumn Header="产品名称" Binding="{Binding Name}" Width="200" />
